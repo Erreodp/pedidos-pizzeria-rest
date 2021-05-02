@@ -3,16 +3,15 @@ package com.ma.pedidos.models;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.UUID;
 
 @Entity
 @Table(name = "pedidos_cabecera")
-public class PedidoCabecera {
+public class Pedido {
 
     @Id
-    @Column(name = "pedido_cabecera_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_PEDIDO_CABECERA")
-    @SequenceGenerator(name = "SEQ_PEDIDO_CABECERA", sequenceName = "SEQ_PEDIDO_CABECERA", initialValue = 1, allocationSize = 1)
-    private Long id;
+    @Column(name = "id")
+    private UUID id;
 
     @Column(name = "direccion")
     private String direccion;
@@ -36,17 +35,16 @@ public class PedidoCabecera {
     private Boolean aplicoDescuento;
 
     @Column(name = "estado")
-    //TODO make enum of status
     private String estado;
 
-    public PedidoCabecera() {
+    public Pedido() {
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

@@ -1,16 +1,15 @@
 package com.ma.pedidos.models;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "productos")
 public class Producto {
 
     @Id
-    @Column(name = "producto_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_PRODUCTOS")
-    @SequenceGenerator(name = "SEQ_PRODUCTOS", sequenceName = "SEQ_PRODUCTOS", initialValue = 1, allocationSize = 1)
-    private Long id;
+    @Column(name = "id")
+    private UUID id;
 
     @Column(name = "nombre")
     private String nombre;
@@ -27,8 +26,12 @@ public class Producto {
     public Producto() {
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getNombre() {

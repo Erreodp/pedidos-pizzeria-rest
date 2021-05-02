@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PedidoManager {
 
-    PedidoOutputData realizarPedido(PedidoInputData input);
+    PedidoOutputData altaPedido(PedidoInputData input) throws Exception;
 
     List<PedidoOutputData> listarPedidosPorFecha(Date fecha);
 }

@@ -1,6 +1,6 @@
 package com.ma.pedidos.manager.impl;
 
-import com.ma.pedidos.dao.ProductosDao;
+import com.ma.pedidos.repository.ProductosRepository;
 import com.ma.pedidos.dto.input.ProductoInputData;
 import com.ma.pedidos.dto.output.ProductoOutputData;
 import com.ma.pedidos.manager.ProductoManager;
@@ -11,12 +11,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProductoManagerImpl implements ProductoManager {
 
     @Autowired
-    private ProductosDao productosDao;
+    private ProductosRepository productosDao;
 
     @Autowired
     private EntityMapper entityMapper;
@@ -55,13 +56,13 @@ public class ProductoManagerImpl implements ProductoManager {
     }
 
     @Override
-    public void delete(Long id) throws Exception {
+    public void delete(UUID id) throws Exception {
 
         Producto producto = validateProducto(id);
         productosDao.delete(producto);
     }
 
-    private Producto validateProducto(Long id) throws Exception {
+    private Producto validateProducto(UUID id) throws Exception {
 
         Producto producto = productosDao.getOne(id);
 

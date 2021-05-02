@@ -1,6 +1,6 @@
 package com.ma.pedidos.dto.input;
 
-import com.ma.pedidos.dto.PedidoDetalleInputOutputDto;
+import com.ma.pedidos.dto.DetallePedidoInputData;
 
 import java.sql.Time;
 import java.util.List;
@@ -15,7 +15,7 @@ public class PedidoInputData {
 
     private Time horario;
 
-    private List<PedidoDetalleInputOutputDto> detalle;
+    private List<DetallePedidoInputData> detalle;
 
     public PedidoInputData() {
     }
@@ -52,11 +52,11 @@ public class PedidoInputData {
         this.horario = horario;
     }
 
-    public List<PedidoDetalleInputOutputDto> getDetalle() {
+    public List<DetallePedidoInputData> getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(List<PedidoDetalleInputOutputDto> detalle) {
+    public void setDetalle(List<DetallePedidoInputData> detalle) {
         this.detalle = detalle;
     }
 }

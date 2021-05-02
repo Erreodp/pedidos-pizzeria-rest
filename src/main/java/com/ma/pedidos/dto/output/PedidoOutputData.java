@@ -1,29 +1,40 @@
 package com.ma.pedidos.dto.output;
 
-import com.ma.pedidos.dto.PedidoDetalleInputOutputDto;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PedidoOutputData {
 
+    @JsonProperty("fecha")
     private Date fecha;
 
+    @JsonProperty("direccion")
     private String direccion;
 
+    @JsonProperty("email")
     private String email;
 
+    @JsonProperty("telefono")
     private String telefono;
 
+    @JsonProperty("horario")
     private Time horario;
 
-    private List<PedidoDetalleInputOutputDto> detalle;
+    @JsonProperty("detalle")
+    private List<DetalleOutputData> detalle;
 
+    @JsonProperty("total")
     private Double total;
 
+    @JsonProperty("descuento")
     private Boolean descuento;
 
+    @JsonProperty("estado")
     private String estado;
 
     public PedidoOutputData() {
@@ -69,11 +80,11 @@ public class PedidoOutputData {
         this.horario = horario;
     }
 
-    public List<PedidoDetalleInputOutputDto> getDetalle() {
+    public List<DetalleOutputData> getDetalle() {
         return detalle;
     }
 
-    public void setDetalle(List<PedidoDetalleInputOutputDto> detalle) {
+    public void setDetalle(List<DetalleOutputData> detalle) {
         this.detalle = detalle;
     }
 

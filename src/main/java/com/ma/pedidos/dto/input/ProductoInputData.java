@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.UUID;
+
 @JsonInclude(Include.NON_NULL)
 public class ProductoInputData {
 
     @JsonProperty("id")
-    private Long id;
+    private UUID id;
 
     @JsonProperty("nombre")
     private String nombre;
@@ -24,11 +26,11 @@ public class ProductoInputData {
 
     public ProductoInputData() {}
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

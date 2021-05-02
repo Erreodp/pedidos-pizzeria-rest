@@ -1,10 +1,10 @@
 package com.ma.pedidos.manager;
 
 import com.ma.pedidos.dto.input.ProductoInputData;
-import com.ma.pedidos.dto.output.PedidoOutputData;
 import com.ma.pedidos.dto.output.ProductoOutputData;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface ProductoManager {
 
@@ -14,6 +14,6 @@ public interface ProductoManager {
 
     List<ProductoOutputData> listProducts() throws Exception;
 
-    void delete(Long id) throws Exception;
+    void delete(UUID id) throws Exception;
 
 }

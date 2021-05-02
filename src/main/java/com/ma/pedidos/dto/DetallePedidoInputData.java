@@ -1,19 +1,21 @@
 package com.ma.pedidos.dto;
 
-public class PedidoDetalleInputOutputDto {
+import java.util.UUID;
 
-    private String producto;
+public class DetallePedidoInputData {
+
+    private UUID producto;
 
     private Integer cantidad;
 
-    public PedidoDetalleInputOutputDto() {
+    public DetallePedidoInputData() {
     }
 
-    public String getProducto() {
+    public UUID getProducto() {
         return producto;
     }
 
-    public void setProducto(String producto) {
+    public void setProducto(UUID producto) {
         this.producto = producto;
     }
 
